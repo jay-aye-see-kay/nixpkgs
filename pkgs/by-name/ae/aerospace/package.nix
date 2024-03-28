@@ -23,10 +23,11 @@ stdenv.mkDerivation {
     hash = "sha256-UVNMjKPMUDuSKPMtLLBb3Lqu5Xocp9X99i+tPjktdbA=";
   };
 
-  postInstall = ''
+  unpackPhase = ''
     mkdir -p $out/Applications
     cp -r $src/ $out/
-    mv $out/AeroSpace.app $out/Applications/AeroSpace.app
+    cp -r $src/AeroSpace.app $out/Applications/
+    ls $out/Applications
   '';
 
   passthru.tests.can-print-version = callPackage ./test-can-print-version.nix { };
