@@ -24,8 +24,9 @@ stdenv.mkDerivation {
   };
 
   unpackPhase = ''
-    ls -lah $src/
+    mkdir -p $out/Applications
     cp -r $src/ $out/
+    mv $out/AeroSpace.app $out/Applications/AeroSpace.app
   '';
 
   passthru.tests.can-print-version = callPackage ./test-can-print-version.nix { };
