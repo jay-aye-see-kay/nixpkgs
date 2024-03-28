@@ -23,7 +23,7 @@ stdenv.mkDerivation {
     hash = "sha256-UVNMjKPMUDuSKPMtLLBb3Lqu5Xocp9X99i+tPjktdbA=";
   };
 
-  unpackPhase = ''
+  postInstall = ''
     mkdir -p $out/Applications
     cp -r $src/ $out/
     mv $out/AeroSpace.app $out/Applications/AeroSpace.app
