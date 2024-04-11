@@ -4,7 +4,7 @@ let
   pname = "aerospace";
   # Version must be a literal string as package has a capital letter in it
   # whilst nixpkgs forbids capitals in version names
-  ghReleaseVersion = "0.9.0-Beta";
+  ghReleaseVersion = "0.9.2-Beta";
   version = lib.strings.toLower ghReleaseVersion;
   meta = with lib; {
     license = licenses.mit;
@@ -20,7 +20,7 @@ stdenv.mkDerivation {
 
   src = fetchzip {
     url = "https://github.com/nikitabobko/${pname}/releases/download/v${ghReleaseVersion}/AeroSpace-v${ghReleaseVersion}.zip";
-    hash = "sha256-UVNMjKPMUDuSKPMtLLBb3Lqu5Xocp9X99i+tPjktdbA=";
+    hash = "sha256-vglOSPIG5l2pIMSTOP1CfsR5seoivfx7j7jNO/CbPNo=";
   };
 
   unpackPhase = ''
