@@ -6,14 +6,14 @@
 
 python3.pkgs.buildPythonApplication {
   pname = "renode-dts2repl";
-  version = "0-unstable-2024-05-21";
+  version = "0-unstable-2024-06-26";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "antmicro";
     repo = "dts2repl";
-    rev = "75223e1c040125ef68f9537aaa3c85fc971327dd";
-    hash = "sha256-ckcCcEoYKeKHH0LYcDm3wR3C45+IzsWE14yS8qnf6VE=";
+    rev = "e5e3c4150dd5cdb0d923a0a26d61060d18c77e75";
+    hash = "sha256-ZNeKiORQAJxvm+EjzjlJh54YlwEz6F/mGQmdO9nbips=";
   };
 
   nativeBuildInputs = [
@@ -26,7 +26,7 @@ python3.pkgs.buildPythonApplication {
   passthru.updateScript = unstableGitUpdater { };
 
   meta = with lib; {
-    description = "A tool for converting device tree sources into Renode's .repl files";
+    description = "Tool for converting device tree sources into Renode's .repl files";
     homepage = "https://github.com/antmicro/dts2repl";
     license = licenses.asl20;
     maintainers = with maintainers; [ otavio ];

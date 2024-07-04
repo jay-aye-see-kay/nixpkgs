@@ -20331,7 +20331,6 @@ self: {
        ];
        description = "Another Haskell web framework for rapid development";
        license = lib.licenses.bsd3;
-       hydraPlatforms = lib.platforms.none;
      }) {};
 
   "Spock-api" = callPackage
@@ -20371,7 +20370,6 @@ self: {
        libraryHaskellDepends = [ base hvect mtl Spock-api Spock-core ];
        description = "Another Haskell web framework for rapid development";
        license = lib.licenses.bsd3;
-       hydraPlatforms = lib.platforms.none;
      }) {};
 
   "Spock-auth" = callPackage
@@ -20415,8 +20413,6 @@ self: {
        ];
        description = "Another Haskell web framework for rapid development";
        license = lib.licenses.bsd3;
-       hydraPlatforms = lib.platforms.none;
-       broken = true;
      }) {};
 
   "Spock-digestive" = callPackage
@@ -20433,7 +20429,6 @@ self: {
        ];
        description = "Digestive functors support for Spock";
        license = lib.licenses.mit;
-       hydraPlatforms = lib.platforms.none;
      }) {};
 
   "Spock-lucid" = callPackage
@@ -20445,7 +20440,6 @@ self: {
        libraryHaskellDepends = [ base lucid Spock transformers ];
        description = "Lucid support for Spock";
        license = lib.licenses.bsd3;
-       hydraPlatforms = lib.platforms.none;
      }) {};
 
   "Spock-worker" = callPackage
@@ -20463,7 +20457,6 @@ self: {
        testHaskellDepends = [ base containers HTF stm vector ];
        description = "Background workers for Spock";
        license = lib.licenses.mit;
-       hydraPlatforms = lib.platforms.none;
      }) {};
 
   "SpreadsheetML" = callPackage
@@ -21841,7 +21834,6 @@ self: {
        ];
        description = "It provides the functionality like unix \"uniq\" utility";
        license = lib.licenses.bsd3;
-       maintainers = [ lib.maintainers.kiwi ];
      }) {};
 
   "Unixutils" = callPackage
@@ -26537,6 +26529,7 @@ self: {
        description = "Derivation of Aeson instances for GADTs";
        license = lib.licenses.bsd3;
        mainProgram = "readme";
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "aeson-generic-compat" = callPackage
@@ -46689,6 +46682,7 @@ self: {
        ];
        description = "Basic examples and functions for generics-sop";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "basics" = callPackage
@@ -50666,7 +50660,6 @@ self: {
        ];
        description = "A small tool that clears cookies (and more)";
        license = lib.licenses.gpl3Only;
-       hydraPlatforms = lib.platforms.none;
        mainProgram = "bisc";
      }) {};
 
@@ -67187,6 +67180,7 @@ self: {
        ];
        description = "Miscellaneous utilities for building and working with command line interfaces";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "cli-git" = callPackage
@@ -67203,6 +67197,7 @@ self: {
        ];
        description = "Bindings to the git command-line interface";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "cli-nix" = callPackage
@@ -67219,6 +67214,7 @@ self: {
        ];
        description = "Bindings to the nix command-line interface";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "cli-setup" = callPackage
@@ -70705,6 +70701,7 @@ self: {
        libraryHaskellDepends = [ base containers ];
        description = "Commutative semigroups";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "commutative-semigroups_0_2_0_1" = callPackage
@@ -70717,6 +70714,7 @@ self: {
        description = "Commutative semigroups";
        license = lib.licenses.bsd3;
        hydraPlatforms = lib.platforms.none;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "comonad" = callPackage
@@ -73683,7 +73681,6 @@ self: {
        testHaskellDepends = [ base config-value text ];
        description = "Schema definitions for the config-value package";
        license = lib.licenses.isc;
-       maintainers = [ lib.maintainers.kiwi ];
      }) {};
 
   "config-select" = callPackage
@@ -73717,7 +73714,6 @@ self: {
        testHaskellDepends = [ base text ];
        description = "Simple, layout-based value language similar to YAML or JSON";
        license = lib.licenses.mit;
-       maintainers = [ lib.maintainers.kiwi ];
      }) {};
 
   "config-value-getopt" = callPackage
@@ -74500,6 +74496,7 @@ self: {
        description = "Utility package for constraints";
        license = lib.licenses.bsd3;
        mainProgram = "readme";
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "constrictor" = callPackage
@@ -86484,6 +86481,7 @@ self: {
        description = "Dependent finite maps (partial dependent products)";
        license = "unknown";
        hydraPlatforms = lib.platforms.none;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "dependent-map" = callPackage
@@ -86501,6 +86499,7 @@ self: {
        ];
        description = "Dependent finite maps (partial dependent products)";
        license = "unknown";
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "dependent-monoidal-map" = callPackage
@@ -86517,6 +86516,7 @@ self: {
        ];
        description = "Dependent map that uses semigroup mappend";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "dependent-state" = callPackage
@@ -86543,6 +86543,7 @@ self: {
        description = "Dependent sum type";
        license = lib.licenses.publicDomain;
        hydraPlatforms = lib.platforms.none;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "dependent-sum" = callPackage
@@ -86556,6 +86557,7 @@ self: {
        libraryHaskellDepends = [ base constraints-extras some ];
        description = "Dependent sum type";
        license = lib.licenses.publicDomain;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "dependent-sum-aeson-orphans" = callPackage
@@ -86572,6 +86574,7 @@ self: {
        ];
        description = "JSON instances for DSum, DMap, and Some";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "dependent-sum-template" = callPackage
@@ -86588,6 +86591,7 @@ self: {
        testHaskellDepends = [ base constraints-extras dependent-sum ];
        description = "Template Haskell code to generate instances of classes in dependent-sum package";
        license = lib.licenses.publicDomain;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "dependent-sum-template_0_2_0_1" = callPackage
@@ -86609,6 +86613,7 @@ self: {
        description = "Template Haskell code to generate instances of classes in some package";
        license = lib.licenses.publicDomain;
        hydraPlatforms = lib.platforms.none;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "depends" = callPackage
@@ -115749,6 +115754,7 @@ self: {
        ];
        description = "Automatically spin up and spin down local daemons";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "gargoyle-postgresql" = callPackage
@@ -115770,6 +115776,7 @@ self: {
        ];
        description = "Manage PostgreSQL servers with gargoyle";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "gargoyle-postgresql-connect" = callPackage
@@ -115787,6 +115794,7 @@ self: {
        ];
        description = "Connect to gargoyle-managed postgresql instances";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "gargoyle-postgresql-nix" = callPackage
@@ -115807,6 +115815,7 @@ self: {
        ];
        description = "Manage PostgreSQL servers with gargoyle and nix";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "garlic-bread" = callPackage
@@ -117516,6 +117525,7 @@ self: {
        ];
        description = "Generic Programming using True Sums of Products";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "generics-sop_0_5_1_4" = callPackage
@@ -117538,6 +117548,7 @@ self: {
        description = "Generic Programming using True Sums of Products";
        license = lib.licenses.bsd3;
        hydraPlatforms = lib.platforms.none;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "generics-sop-lens" = callPackage
@@ -119906,6 +119917,28 @@ self: {
        license = lib.licenses.bsd3;
      }) {};
 
+  "ghc-lib_9_8_2_20240223" = callPackage
+    ({ mkDerivation, alex, array, base, binary, bytestring, containers
+     , deepseq, directory, exceptions, filepath, ghc-lib-parser
+     , ghc-prim, happy, hpc, parsec, pretty, process, rts
+     , semaphore-compat, stm, time, transformers, unix
+     }:
+     mkDerivation {
+       pname = "ghc-lib";
+       version = "9.8.2.20240223";
+       sha256 = "12lmk3ipd1pyiwzmnb0zgbw86yy7mhsy530dnackwidg3ww07nia";
+       enableSeparateDataOutput = true;
+       libraryHaskellDepends = [
+         array base binary bytestring containers deepseq directory
+         exceptions filepath ghc-lib-parser ghc-prim hpc parsec pretty
+         process rts semaphore-compat stm time transformers unix
+       ];
+       libraryToolDepends = [ alex happy ];
+       description = "The GHC API, decoupled from GHC versions";
+       license = lib.licenses.bsd3;
+       hydraPlatforms = lib.platforms.none;
+     }) {};
+
   "ghc-lib_9_10_1_20240511" = callPackage
     ({ mkDerivation, alex, array, base, binary, bytestring, containers
      , deepseq, directory, exceptions, filepath, ghc-lib-parser
@@ -120633,7 +120666,6 @@ self: {
        license = lib.licenses.mpl20;
        hydraPlatforms = lib.platforms.none;
        mainProgram = "ghc-tags";
-       broken = true;
      }) {};
 
   "ghc-tags_1_6" = callPackage
@@ -120657,7 +120689,29 @@ self: {
        license = lib.licenses.mpl20;
        hydraPlatforms = lib.platforms.none;
        mainProgram = "ghc-tags";
-       broken = true;
+     }) {};
+
+  "ghc-tags_1_7" = callPackage
+    ({ mkDerivation, aeson, async, attoparsec, base, bytestring
+     , containers, deepseq, directory, filepath, ghc, ghc-boot
+     , ghc-paths, optparse-applicative, process, stm, temporary, text
+     , time, vector, yaml
+     }:
+     mkDerivation {
+       pname = "ghc-tags";
+       version = "1.7";
+       sha256 = "17189yi1zffgcdwx0nb6n4pbv3jhfajhfnag84fnqwy4kbvl5ma4";
+       isLibrary = false;
+       isExecutable = true;
+       executableHaskellDepends = [
+         aeson async attoparsec base bytestring containers deepseq directory
+         filepath ghc ghc-boot ghc-paths optparse-applicative process stm
+         temporary text time vector yaml
+       ];
+       description = "Utility for generating ctags and etags with GHC API";
+       license = lib.licenses.mpl20;
+       hydraPlatforms = lib.platforms.none;
+       mainProgram = "ghc-tags";
      }) {};
 
   "ghc-tags" = callPackage
@@ -120679,9 +120733,7 @@ self: {
        ];
        description = "Utility for generating ctags and etags with GHC API";
        license = lib.licenses.mpl20;
-       hydraPlatforms = lib.platforms.none;
        mainProgram = "ghc-tags";
-       broken = true;
      }) {};
 
   "ghc-tags-core" = callPackage
@@ -121290,6 +121342,8 @@ self: {
        sha256 = "1cx9jqpbr6b30qckp2zpsfk3swa58snjb79pq0l6485nvrxa9mls";
        description = "base library for GHCJS";
        license = lib.licenses.mit;
+       platforms = [ "javascript-ghcjs" ];
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "ghcjs-base-stub" = callPackage
@@ -121336,6 +121390,7 @@ self: {
        ];
        description = "DOM library that supports both GHCJS and GHC";
        license = lib.licenses.mit;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "ghcjs-dom-hello" = callPackage
@@ -121357,7 +121412,7 @@ self: {
        ];
        description = "GHCJS DOM Hello World, an example package";
        license = lib.licenses.mit;
-       badPlatforms = lib.platforms.darwin;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "ghcjs-dom-javascript" = callPackage
@@ -121368,8 +121423,8 @@ self: {
        sha256 = "0im7wn7bn43rhkblh0wn9angadbdvywsalfz0adr9pkwv6hvc8qs";
        description = "DOM library using JSFFI and GHCJS";
        license = lib.licenses.mit;
-       hydraPlatforms = lib.platforms.none;
-       broken = true;
+       platforms = [ "javascript-ghcjs" ];
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "ghcjs-dom-jsaddle" = callPackage
@@ -121382,6 +121437,7 @@ self: {
        doHaddock = false;
        description = "DOM library that supports both GHCJS and GHC using jsaddle";
        license = lib.licenses.mit;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "ghcjs-dom-jsffi" = callPackage
@@ -121506,6 +121562,8 @@ self: {
        ];
        description = "Deprecated: use ghcjs-base's native websockets";
        license = lib.licenses.mit;
+       hydraPlatforms = lib.platforms.none;
+       broken = true;
      }) {};
 
   "ghcjs-xhr" = callPackage
@@ -124459,7 +124517,9 @@ self: {
        ];
        description = "Wiki using happstack, git or darcs, and pandoc";
        license = "GPL";
-       maintainers = [ lib.maintainers.sternenseemann ];
+       maintainers = [
+         lib.maintainers.Profpatsch lib.maintainers.sternenseemann
+       ];
      }) {};
 
   "gitlab-api" = callPackage
@@ -125212,7 +125272,6 @@ self: {
        license = lib.licenses.isc;
        hydraPlatforms = lib.platforms.none;
        mainProgram = "glirc";
-       maintainers = [ lib.maintainers.kiwi ];
      }) {};
 
   "gll" = callPackage
@@ -125957,22 +126016,21 @@ self: {
      }) {};
 
   "gnome-keyring" = callPackage
-    ({ mkDerivation, base, bytestring, c2hs, gnome-keyring
-     , libgnome-keyring, text, time
+    ({ mkDerivation, base, bytestring, c2hs, libgnome-keyring
+     , text, time
      }:
      mkDerivation {
        pname = "gnome-keyring";
        version = "0.3.1.1";
        sha256 = "044bbgy8cssi1jc8wwb0kvxpw6d7pwxackkzvw7p9r8ybmgv4d0b";
        libraryHaskellDepends = [ base bytestring text time ];
-       librarySystemDepends = [ gnome-keyring ];
+       librarySystemDepends = [ libgnome-keyring ];
        libraryPkgconfigDepends = [ libgnome-keyring ];
        libraryToolDepends = [ c2hs ];
        description = "Bindings for libgnome-keyring";
        license = lib.licenses.gpl3Only;
        badPlatforms = lib.platforms.darwin;
-     }) {inherit (pkgs.gnome) gnome-keyring; 
-         inherit (pkgs) libgnome-keyring;};
+     }) {inherit (pkgs) libgnome-keyring;};
 
   "gnomevfs" = callPackage
     ({ mkDerivation, array, base, containers, glib, gnome-vfs
@@ -144055,6 +144113,7 @@ self: {
        description = "Library for checking for weak/compromised passwords";
        license = lib.licenses.bsd3;
        mainProgram = "readme";
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "haven" = callPackage
@@ -151641,9 +151700,7 @@ self: {
        testToolDepends = [ hspec-discover ];
        description = "A terminal UI as drop-in replacement for hledger add";
        license = lib.licenses.bsd3;
-       hydraPlatforms = lib.platforms.none;
        mainProgram = "hledger-iadd";
-       broken = true;
      }) {};
 
   "hledger-iadd_1_3_21" = callPackage
@@ -151679,7 +151736,6 @@ self: {
        license = lib.licenses.bsd3;
        hydraPlatforms = lib.platforms.none;
        mainProgram = "hledger-iadd";
-       broken = true;
      }) {};
 
   "hledger-interest" = callPackage
@@ -163829,8 +163885,6 @@ self: {
        ];
        description = "A high-performance HTML tokenizer";
        license = lib.licenses.bsd3;
-       hydraPlatforms = lib.platforms.none;
-       broken = true;
      }) {};
 
   "html-parse-util" = callPackage
@@ -175485,7 +175539,6 @@ self: {
        description = "IRC core library for glirc";
        license = lib.licenses.isc;
        hydraPlatforms = lib.platforms.none;
-       maintainers = [ lib.maintainers.kiwi ];
        broken = true;
      }) {};
 
@@ -178568,6 +178621,7 @@ self: {
        ];
        description = "Interface for JavaScript that works with GHCJS and GHC";
        license = lib.licenses.mit;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "jsaddle-clib" = callPackage
@@ -178583,6 +178637,7 @@ self: {
        ];
        description = "Interface for JavaScript that works with GHCJS and GHC";
        license = lib.licenses.mit;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "jsaddle-dom" = callPackage
@@ -178598,6 +178653,7 @@ self: {
        ];
        description = "DOM library that uses jsaddle to support both GHCJS and GHC";
        license = lib.licenses.mit;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "jsaddle-hello" = callPackage
@@ -178617,7 +178673,7 @@ self: {
        ];
        description = "JSaddle Hello World, an example package";
        license = lib.licenses.mit;
-       badPlatforms = lib.platforms.darwin;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "jsaddle-warp" = callPackage
@@ -178640,7 +178696,9 @@ self: {
        ];
        description = "Interface for JavaScript that works with GHCJS and GHC";
        license = lib.licenses.mit;
-       maintainers = [ lib.maintainers.maralorn ];
+       maintainers = [
+         lib.maintainers.alexfmpe lib.maintainers.maralorn
+       ];
      }) {};
 
   "jsaddle-webkit2gtk" = callPackage
@@ -178661,6 +178719,7 @@ self: {
        description = "Interface for JavaScript that works with GHCJS and GHC";
        license = lib.licenses.mit;
        badPlatforms = lib.platforms.darwin;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "jsaddle-webkitgtk" = callPackage
@@ -178691,6 +178750,7 @@ self: {
        description = "Interface for JavaScript that works with GHCJS and GHC";
        license = lib.licenses.mit;
        platforms = lib.platforms.darwin;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "jsc" = callPackage
@@ -179459,7 +179519,7 @@ self: {
        ];
        description = "Generics JSON (de)serialization using generics-sop";
        license = lib.licenses.bsd3;
-       hydraPlatforms = lib.platforms.none;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "json-spec" = callPackage
@@ -186940,6 +187000,7 @@ self: {
        ];
        description = "Generic programming API for large-records and large-anon";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "large-hashable" = callPackage
@@ -186999,6 +187060,7 @@ self: {
        description = "Efficient compilation for large records, linear in the size of the record";
        license = lib.licenses.bsd3;
        hydraPlatforms = lib.platforms.none;
+       maintainers = [ lib.maintainers.alexfmpe ];
        broken = true;
      }) {};
 
@@ -189080,8 +189142,7 @@ self: {
        ];
        description = "Computing lenses generically using generics-sop";
        license = lib.licenses.bsd3;
-       hydraPlatforms = lib.platforms.none;
-       broken = true;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "lens-tell" = callPackage
@@ -189416,8 +189477,6 @@ self: {
        ];
        description = "Haskell bindings to LevelDB";
        license = lib.licenses.bsd3;
-       hydraPlatforms = lib.platforms.none;
-       broken = true;
      }) {inherit (pkgs) leveldb;};
 
   "leveldb-haskell-fork" = callPackage
@@ -192499,6 +192558,7 @@ self: {
        description = "Work with linux namespaces: create new or enter existing ones";
        license = lib.licenses.bsd3;
        platforms = lib.platforms.linux;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "linux-perf" = callPackage
@@ -200953,7 +201013,6 @@ self: {
        description = "Terminal client for the Mattermost chat system";
        license = lib.licenses.bsd3;
        mainProgram = "matterhorn";
-       maintainers = [ lib.maintainers.kiwi ];
      }) {};
 
   "mattermost-api" = callPackage
@@ -200982,7 +201041,6 @@ self: {
        ];
        description = "Client API for Mattermost chat system";
        license = lib.licenses.bsd3;
-       maintainers = [ lib.maintainers.kiwi ];
      }) {};
 
   "mattermost-api-qc" = callPackage
@@ -200998,7 +201056,6 @@ self: {
        ];
        description = "QuickCheck instances for the Mattermost client API library";
        license = lib.licenses.isc;
-       maintainers = [ lib.maintainers.kiwi ];
      }) {};
 
   "maude" = callPackage
@@ -209002,6 +209059,7 @@ self: {
        ];
        description = "Containers with monoidal accumulation";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "monoidal-functors" = callPackage
@@ -218837,6 +218895,7 @@ self: {
        description = "Lightweight dependency management with Nix";
        license = lib.licenses.bsd3;
        mainProgram = "nix-thunk";
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "nix-tools" = callPackage
@@ -231253,6 +231312,7 @@ self: {
        testHaskellDepends = [ base containers hedgehog HUnit ];
        description = "Data structures for describing changes to other data structures";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "patch-combinators" = callPackage
@@ -247283,6 +247343,7 @@ self: {
        ];
        description = "Arbitrary instances for proto-lens";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "proto-lens-combinators" = callPackage
@@ -247470,6 +247531,7 @@ self: {
        description = "A higher-level API to the proto3-wire library";
        license = lib.licenses.asl20;
        hydraPlatforms = lib.platforms.none;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "proto3-wire" = callPackage
@@ -247495,6 +247557,7 @@ self: {
        benchmarkHaskellDepends = [ base bytestring criterion random ];
        description = "A low-level implementation of the Protocol Buffers (version 3) wire format";
        license = lib.licenses.asl20;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "protobuf" = callPackage
@@ -249188,9 +249251,7 @@ self: {
        testHaskellDepends = [ aeson base hspec ];
        description = "Send push notifications to mobile iOS devices";
        license = lib.licenses.bsd3;
-       hydraPlatforms = lib.platforms.none;
        mainProgram = "sendapn";
-       broken = true;
      }) {};
 
   "push-notify-ccs" = callPackage
@@ -255541,6 +255602,7 @@ self: {
        ];
        description = "Record subtyping and record utilities with generics-sop";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "records-th" = callPackage
@@ -256446,6 +256508,7 @@ self: {
        ];
        description = "Higher-order Functional Reactive Programming";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "reflex-animation" = callPackage
@@ -256549,7 +256612,9 @@ self: {
        ];
        description = "Functional Reactive Web Apps with Reflex";
        license = lib.licenses.bsd3;
-       maintainers = [ lib.maintainers.maralorn ];
+       maintainers = [
+         lib.maintainers.alexfmpe lib.maintainers.maralorn
+       ];
      }) {};
 
   "reflex-dom-ace" = callPackage
@@ -256648,6 +256713,7 @@ self: {
        description = "Functional Reactive Web Apps with Reflex";
        license = lib.licenses.bsd3;
        hydraPlatforms = lib.platforms.none;
+       maintainers = [ lib.maintainers.alexfmpe ];
        broken = true;
      }) {chrome-test-utils = null;};
 
@@ -256858,6 +256924,7 @@ self: {
        license = lib.licenses.bsd3;
        hydraPlatforms = lib.platforms.none;
        mainProgram = "readme";
+       maintainers = [ lib.maintainers.alexfmpe ];
        broken = true;
      }) {};
 
@@ -267467,9 +267534,7 @@ self: {
        description = "Generates unique passwords for various websites from a single password";
        license = lib.licenses.bsd3;
        platforms = lib.platforms.x86;
-       hydraPlatforms = lib.platforms.none;
        mainProgram = "scat";
-       broken = true;
      }) {};
 
   "scc" = callPackage
@@ -269844,8 +269909,6 @@ self: {
        ];
        description = "Multi-backend, high-level EDSL for interacting with SQL databases";
        license = lib.licenses.mit;
-       hydraPlatforms = lib.platforms.none;
-       broken = true;
      }) {};
 
   "selda-json" = callPackage
@@ -269857,7 +269920,6 @@ self: {
        libraryHaskellDepends = [ aeson base bytestring selda text ];
        description = "JSON support for the Selda database library";
        license = lib.licenses.mit;
-       hydraPlatforms = lib.platforms.none;
      }) {};
 
   "selda-postgresql" = callPackage
@@ -269892,7 +269954,6 @@ self: {
        ];
        description = "SQLite backend for the Selda database EDSL";
        license = lib.licenses.mit;
-       hydraPlatforms = lib.platforms.none;
      }) {};
 
   "select" = callPackage
@@ -274850,8 +274911,6 @@ self: {
        libraryHaskellDepends = [ base containers mtl syb ];
        description = "Functions that could be added to Data.Set.";
        license = lib.licenses.bsd3;
-       hydraPlatforms = lib.platforms.none;
-       broken = true;
      }) {};
 
   "set-monad" = callPackage
@@ -317176,6 +317235,7 @@ self: {
        ];
        description = "A class for finite and recursively enumerable types";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "universe_1_2_3" = callPackage
@@ -317193,6 +317253,7 @@ self: {
        description = "A class for finite and recursively enumerable types";
        license = lib.licenses.bsd3;
        hydraPlatforms = lib.platforms.none;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "universe-base" = callPackage
@@ -317354,6 +317415,7 @@ self: {
        testHaskellDepends = [ base some template-haskell universe-base ];
        description = "Universe instances for Some from some";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "universe-some_1_2_2" = callPackage
@@ -317372,6 +317434,7 @@ self: {
        description = "Universe instances for Some from some";
        license = lib.licenses.bsd3;
        hydraPlatforms = lib.platforms.none;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "universe-th" = callPackage
@@ -322333,6 +322396,7 @@ self: {
        description = "Functor-parametric containers";
        license = lib.licenses.bsd3;
        hydraPlatforms = lib.platforms.none;
+       maintainers = [ lib.maintainers.alexfmpe ];
        broken = true;
      }) {};
 
@@ -326025,6 +326089,7 @@ self: {
        description = "A fast, light-weight web server for WAI applications";
        license = lib.licenses.mit;
        hydraPlatforms = lib.platforms.none;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "warp" = callPackage
@@ -326059,6 +326124,7 @@ self: {
        ];
        description = "A fast, light-weight web server for WAI applications";
        license = lib.licenses.mit;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "warp_3_4_1" = callPackage
@@ -326096,6 +326162,7 @@ self: {
        description = "A fast, light-weight web server for WAI applications";
        license = lib.licenses.mit;
        hydraPlatforms = lib.platforms.none;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "warp-dynamic" = callPackage
@@ -328656,6 +328723,7 @@ self: {
        libraryHaskellDepends = [ base shelly template-haskell text ];
        description = "Determine the full path to an executable";
        license = lib.licenses.bsd3;
+       maintainers = [ lib.maintainers.alexfmpe ];
      }) {};
 
   "while-lang-parser" = callPackage
@@ -336384,8 +336452,6 @@ self: {
        ];
        description = "Add CSP headers to Yesod apps";
        license = lib.licenses.mit;
-       hydraPlatforms = lib.platforms.none;
-       broken = true;
      }) {};
 
   "yesod-datatables" = callPackage
