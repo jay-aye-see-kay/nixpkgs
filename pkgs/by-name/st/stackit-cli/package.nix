@@ -6,22 +6,21 @@
 , less
 , xdg-utils
 , testers
-, runCommand
 , stackit-cli
 }:
 
 buildGoModule rec {
   pname = "stackit-cli";
-  version = "0.9.0";
+  version = "0.11.0";
 
   src = fetchFromGitHub {
     owner = "stackitcloud";
     repo = "stackit-cli";
     rev = "v${version}";
-    hash = "sha256-md21Cq+Az7Wwq9Q+4AHDKvFMD5skUCxtwfJzN6ekJes=";
+    hash = "sha256-ioV5ki2Jkbo/Ax9XDp/gm9NFTFS9604VAwOgs8wkoKU=";
   };
 
-  vendorHash = "sha256-fDGqtvDtIAbTGWief4liTJjRSF2mtP0IchT9sy9qXcQ=";
+  vendorHash = "sha256-1MM4P4eLBZvYgmdYjaihe30qnCvTuY7ZHnAZei3dHhQ=";
 
   subPackages = [ "." ];
 
@@ -36,7 +35,7 @@ buildGoModule rec {
   nativeBuildInputs = [ installShellFiles makeWrapper ];
 
   postInstall = ''
-    mv $out/bin/{${pname},stackit} # rename the binary
+    mv $out/bin/{stackit-cli,stackit} # rename the binary
 
     installShellCompletion --cmd stackit \
       --bash <($out/bin/stackit completion bash) \

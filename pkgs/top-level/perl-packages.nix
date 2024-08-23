@@ -23666,11 +23666,11 @@ with self; {
       url = "mirror://cpan/authors/id/T/TO/TODDR/Safe-Hole-0.14.tar.gz";
       hash = "sha256-9PVui70GxP5K4G2xIYbeyt+6wep3XqGMbAKJSB0V7AU=";
     };
+    perlPreHook = lib.optionalString stdenv.isDarwin "export LD=$CC";
     meta = {
       description = "Lib/Safe/Hole.pm";
       homepage = "https://github.com/toddr/Safe-Hole";
       license = with lib.licenses; [ artistic1 gpl1Plus ];
-      broken = stdenv.isDarwin;
     };
   };
 
@@ -28572,21 +28572,18 @@ with self; {
 
   XMLLibXML = buildPerlPackage {
     pname = "XML-LibXML";
-    version = "2.0209";
+    version = "2.0210";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/S/SH/SHLOMIF/XML-LibXML-2.0209.tar.gz";
-      hash = "sha256-tKWrvNaJqi+7yLe0UznpYcSYTkgQhJTrbCgrR0giJCU=";
+      url = "mirror://cpan/authors/id/S/SH/SHLOMIF/XML-LibXML-2.0210.tar.gz";
+      hash = "sha256-opvz8Aq5ye4EIYFU4K/I95m/I2dOuZwantTeH0BZpI0=";
     };
     SKIP_SAX_INSTALL = 1;
     buildInputs = [ AlienBuild AlienLibxml2 ]
       ++ lib.optionals stdenv.isDarwin (with pkgs; [ libiconv zlib ]);
     patches = [
-      ../development/perl-modules/XML-LibXML-clang16.patch
+      # https://github.com/shlomif/perl-XML-LibXML/pull/87
+      ../development/perl-modules/XML-LibXML-fix-tests-libxml-2.13.0.patch
     ];
-    # Remove test that fails after LibXML 2.11 upgrade
-    postPatch = ''
-      rm t/35huge_mode.t
-    '';
     propagatedBuildInputs = [ XMLSAX ];
     meta = {
       description = "Perl Binding for libxml2";

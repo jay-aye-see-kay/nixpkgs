@@ -225,8 +225,6 @@ let
 
     cohttp-lwt-unix = callPackage ../development/ocaml-modules/cohttp/lwt-unix.nix { };
 
-    cohttp-mirage = callPackage ../development/ocaml-modules/cohttp/mirage.nix { };
-
     cohttp-top = callPackage ../development/ocaml-modules/cohttp/top.nix { };
 
     coin =  callPackage ../development/ocaml-modules/coin { };
@@ -751,7 +749,9 @@ let
 
     # Jane Street
     janePackage =
-      if lib.versionOlder "4.13.1" ocaml.version
+      if lib.versionOlder "5.1" ocaml.version
+      then callPackage ../development/ocaml-modules/janestreet/janePackage_0_17.nix {}
+      else if lib.versionOlder "4.13.1" ocaml.version
       then callPackage ../development/ocaml-modules/janestreet/janePackage_0_16.nix {}
       else if lib.versionOlder "4.10.2" ocaml.version
       then callPackage ../development/ocaml-modules/janestreet/janePackage_0_15.nix {}
@@ -762,7 +762,13 @@ let
       else null;
 
     janeStreet =
-      if lib.versionOlder "4.13.1" ocaml.version
+      if lib.versionOlder "5.1" ocaml.version
+      then import ../development/ocaml-modules/janestreet/0.17.nix
+         {
+           inherit self;
+           inherit (pkgs) bash fzf lib openssl zstd;
+         }
+      else if lib.versionOlder "4.13.1" ocaml.version
       then import ../development/ocaml-modules/janestreet/0.16.nix {
         inherit self;
         inherit (pkgs) bash fetchpatch fzf lib openssl zstd krb5;
@@ -1109,8 +1115,6 @@ let
 
     mirage-bootvar-xen = callPackage ../development/ocaml-modules/mirage-bootvar-xen { };
 
-    mirage-channel = callPackage ../development/ocaml-modules/mirage-channel { };
-
     mirage-clock = callPackage ../development/ocaml-modules/mirage-clock { };
 
     mirage-clock-solo5 = callPackage ../development/ocaml-modules/mirage-clock/solo5.nix { };
@@ -1118,8 +1122,6 @@ let
     mirage-clock-unix = callPackage ../development/ocaml-modules/mirage-clock/unix.nix { };
 
     mirage-console = callPackage ../development/ocaml-modules/mirage-console { };
-
-    mirage-console-unix = callPackage ../development/ocaml-modules/mirage-console/unix.nix { };
 
     mirage-crypto = callPackage ../development/ocaml-modules/mirage-crypto { };
 
@@ -1180,6 +1182,8 @@ let
     mm = callPackage ../development/ocaml-modules/mm { };
 
     mmap =  callPackage ../development/ocaml-modules/mmap { };
+
+    mopsa = callPackage ../development/ocaml-modules/mopsa { };
 
     morbig = callPackage ../development/ocaml-modules/morbig { };
 
@@ -1379,22 +1383,16 @@ let
     omd = callPackage ../development/ocaml-modules/omd { };
 
     opam-core = callPackage ../development/ocaml-modules/opam-core {
-      inherit (pkgs) opam unzip;
+      inherit (pkgs) opam;
     };
 
     opam-file-format = callPackage ../development/ocaml-modules/opam-file-format { };
 
-    opam-format = callPackage ../development/ocaml-modules/opam-format {
-      inherit (pkgs) unzip;
-    };
+    opam-format = callPackage ../development/ocaml-modules/opam-format { };
 
-    opam-repository = callPackage ../development/ocaml-modules/opam-repository {
-      inherit (pkgs) unzip;
-    };
+    opam-repository = callPackage ../development/ocaml-modules/opam-repository { };
 
-    opam-state = callPackage ../development/ocaml-modules/opam-state {
-      inherit (pkgs) unzip;
-    };
+    opam-state = callPackage ../development/ocaml-modules/opam-state { };
 
     opium = callPackage ../development/ocaml-modules/opium { };
 
@@ -1716,6 +1714,8 @@ let
       inherit (pkgs) soundtouch;
     };
 
+    spdx_licenses = callPackage ../development/ocaml-modules/spdx_licenses { };
+
     speex = callPackage ../development/ocaml-modules/speex {
       inherit (pkgs) speex;
     };
@@ -1745,6 +1745,8 @@ let
     streaming = callPackage ../development/ocaml-modules/streaming { };
 
     stringext = callPackage ../development/ocaml-modules/stringext { };
+
+    swhid_core = callPackage ../development/ocaml-modules/swhid_core { };
 
     syslog = callPackage ../development/ocaml-modules/syslog { };
 

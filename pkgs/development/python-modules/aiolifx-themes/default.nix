@@ -6,14 +6,14 @@
   fetchFromGitHub,
   poetry-core,
   pytest-asyncio,
+  pytest-cov-stub,
   pytestCheckHook,
   pythonOlder,
-  typer,
 }:
 
 buildPythonPackage rec {
   pname = "aiolifx-themes";
-  version = "0.4.21";
+  version = "0.5.2";
   pyproject = true;
 
   disabled = pythonOlder "3.9";
@@ -22,15 +22,8 @@ buildPythonPackage rec {
     owner = "Djelibeybi";
     repo = "aiolifx-themes";
     rev = "refs/tags/v${version}";
-    hash = "sha256-GRB4Hj+WjiEqskq4KnaD6aDpoESLBTs77Xj23+0/A6k=";
+    hash = "sha256-0qC8FvXk7MlvdO4k7tihjE91tbMbnzOs8YvOyzpL4J4=";
   };
-
-  prePatch = ''
-    # Don't run coverage, or depend on typer for no reason.
-    substituteInPlace pyproject.toml \
-      --replace-fail " --cov=aiolifx_themes --cov-report=term-missing:skip-covered" "" \
-      --replace-fail "typer = " "# unused: typer = "
-  '';
 
   build-system = [ poetry-core ];
 
@@ -40,6 +33,7 @@ buildPythonPackage rec {
     async-timeout
     pytestCheckHook
     pytest-asyncio
+    pytest-cov-stub
   ];
 
   pythonImportsCheck = [ "aiolifx_themes" ];

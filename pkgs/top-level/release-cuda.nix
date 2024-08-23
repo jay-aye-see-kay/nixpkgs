@@ -19,10 +19,10 @@ let
     builtins.all (
       license:
       license.free
-      || license.redistributable
       || builtins.elem license.shortName [
         "CUDA EULA"
         "cuDNN EULA"
+        "cuTENSOR EULA"
         "NVidia OptiX EULA"
       ]
     ) (ensureList p.meta.license);
@@ -43,7 +43,8 @@ in
       inHydra = true;
     };
   },
-}:
+  ...
+}@args:
 
 assert builtins.elem variant [
   "cuda"
@@ -52,7 +53,9 @@ assert builtins.elem variant [
 ];
 
 let
-  release-lib = import ./release-lib.nix { inherit supportedSystems nixpkgsArgs; };
+  release-lib = import ./release-lib.nix (
+    { inherit supportedSystems nixpkgsArgs; } // builtins.removeAttrs args [ "variant" ]
+  );
 
   inherit (release-lib) lib;
   inherit (release-lib)
@@ -127,12 +130,11 @@ let
         jax = linux;
         Keras = linux;
         kornia = linux;
-        libgpuarray = linux;
         mmcv = linux;
         mxnet = linux;
         numpy = linux; # Only affected by MKL?
         onnx = linux;
-        openai-triton = linux;
+        triton = linux;
         openai-whisper = linux;
         opencv4 = linux;
         opensfm = linux;

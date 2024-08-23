@@ -14,6 +14,7 @@
   httpx-sse,
   parameterized,
   pydantic,
+  pydantic-core,
   requests,
   tokenizers,
   types-requests,
@@ -22,7 +23,7 @@
 
 buildPythonPackage rec {
   pname = "cohere";
-  version = "5.6.0";
+  version = "5.8.1";
   pyproject = true;
 
   disabled = pythonOlder "3.8";
@@ -31,7 +32,7 @@ buildPythonPackage rec {
     owner = "cohere-ai";
     repo = "cohere-python";
     rev = "refs/tags/${version}";
-    hash = "sha256-zv4zSUQzt2jjuKumaV5vI3GbhZWKEjALohfuxQp6i7Q=";
+    hash = "sha256-IU+6X2lyH+5SeWSfzogLLj0D5t1rRwkNbb8AyaaIxnA=";
   };
 
   build-system = [ poetry-core ];
@@ -43,6 +44,7 @@ buildPythonPackage rec {
     httpx-sse
     parameterized
     pydantic
+    pydantic-core
     requests
     tokenizers
     types-requests

@@ -43,7 +43,6 @@
 , cacert
 , glibcLocales
 , fetchFromGitHub
-, fetchpatch2
 , nixosTests
 }:
 
@@ -122,15 +121,15 @@ let
       ];
   };
 in
-stdenv.mkDerivation rec {
+stdenv.mkDerivation (finalAttrs: {
   pname = "hydra";
-  version = "2024-03-08";
+  version = "2024-08-20";
 
   src = fetchFromGitHub {
     owner = "NixOS";
     repo = "hydra";
-    rev = "8f56209bd6f3b9ec53d50a23812a800dee7a1969";
-    hash = "sha256-mhEj02VruXPmxz3jsKHMov2ERNXk9DwaTAunWEO1iIQ=";
+    rev = "4bb2f08be14ff86d57b94b520a6cd2181efaee36";
+    hash = "sha256-NzsqjLSobba4BJ5FS3vccC9rAH0OE9XI97geGj0KHts=";
   };
 
   buildInputs = [
@@ -206,28 +205,11 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  patches = [
-    # https://github.com/NixOS/hydra/security/advisories/GHSA-2p75-6g9f-pqgx
-    (fetchpatch2 {
-      name = "CVE-2024-32657.patch";
-      url = "https://github.com/NixOS/hydra/commit/b72528be5074f3e62e9ae2c2ae8ef9c07a0b4dd3.patch";
-      hash = "sha256-+y27N8AIaHj13mj0LwW7dkpzfzZ4xfjN8Ld23c5mzuU=";
-    })
-  ];
-
-  postPatch = ''
-    # Change 5s timeout for init to 30s
-    substituteInPlace t/lib/HydraTestContext.pm \
-      --replace 'expectOkay(5, ("hydra-init"));' 'expectOkay(30, ("hydra-init"));'
-  '';
-
   preCheck = ''
     patchShebangs .
     export LOGNAME=''${LOGNAME:-foo}
     # set $HOME for bzr so it can create its trace file
     export HOME=$(mktemp -d)
-    # remove flaky test
-    rm t/Hydra/Controller/User/ldap-legacy.t
   '';
 
   postInstall = ''
@@ -238,7 +220,7 @@ stdenv.mkDerivation rec {
         wrapProgram $i \
             --prefix PERL5LIB ':' $out/libexec/hydra/lib:$PERL5LIB \
             --prefix PATH ':' $out/bin:$hydraPath \
-            --set-default HYDRA_RELEASE ${version} \
+            --set-default HYDRA_RELEASE ${finalAttrs.version} \
             --set HYDRA_HOME $out/libexec/hydra \
             --set NIX_RELEASE ${nix.name or "unknown"}
     done
@@ -258,4 +240,4 @@ stdenv.mkDerivation rec {
     platforms = platforms.linux;
     maintainers = with maintainers; [ mindavi ] ++ teams.helsinki-systems.members;
   };
-}
+})
