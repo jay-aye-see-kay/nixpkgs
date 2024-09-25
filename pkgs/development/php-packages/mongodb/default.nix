@@ -16,13 +16,13 @@
 
 buildPecl rec {
   pname = "mongodb";
-  version = "1.19.3";
+  version = "1.19.4";
 
   src = fetchFromGitHub {
     owner = "mongodb";
     repo = "mongo-php-driver";
     rev = version;
-    hash = "sha256-gpnL4mXOD/MDG7xWxUpLLKfRD2w6HqNokC5358OkFSg=";
+    hash = "sha256-71CS9boQzW2NMmkQeOQjGaTx2CN3bkcfgO5NwV9J9JI=";
     fetchSubmodules = true;
   };
 
@@ -36,7 +36,7 @@ buildPecl rec {
       zlib
       pcre2
     ]
-    ++ lib.optionals stdenv.isDarwin [
+    ++ lib.optionals stdenv.hostPlatform.isDarwin [
       darwin.apple_sdk_11_0.frameworks.Security
       darwin.apple_sdk_11_0.Libsystem
       libiconv

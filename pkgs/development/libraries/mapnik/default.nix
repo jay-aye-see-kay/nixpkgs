@@ -28,13 +28,13 @@
 
 stdenv.mkDerivation rec {
   pname = "mapnik";
-  version = "4.0.0";
+  version = "4.0.2";
 
   src = fetchFromGitHub {
     owner = "mapnik";
     repo = "mapnik";
     rev = "v${version}";
-    hash = "sha256-CNFNGMJU3kzkRrOGsf8/uv5ebHPEQ0tkA+5OubRVEjs=";
+    hash = "sha256-U5QQ7I7ZBNlMm74Vpvv8lvJ4EefM3+jHURFAP03Lmvw=";
     fetchSubmodules = true;
   };
 
@@ -99,7 +99,7 @@ stdenv.mkDerivation rec {
     # Use 'protozero' package.
     (lib.cmakeBool "USE_EXTERNAL_MAPBOX_PROTOZERO" true)
     # macOS builds fail when using memory mapped file cache.
-    (lib.cmakeBool "USE_MEMORY_MAPPED_FILE" (!stdenv.isDarwin))
+    (lib.cmakeBool "USE_MEMORY_MAPPED_FILE" (!stdenv.hostPlatform.isDarwin))
   ];
 
   doCheck = true;

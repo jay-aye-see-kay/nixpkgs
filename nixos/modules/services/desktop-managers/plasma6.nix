@@ -147,6 +147,10 @@ in {
         spectacle
         ffmpegthumbs
         krdp
+      ] ++ lib.optionals config.services.flatpak.enable [
+        # Since PackageKit Nix support is not there yet,
+        # only install discover if flatpak is enabled.
+        discover
       ];
     in
       requiredPackages
@@ -244,6 +248,9 @@ in {
     xdg.portal.extraPortals = [kdePackages.xdg-desktop-portal-kde];
     xdg.portal.configPackages = mkDefault [kdePackages.xdg-desktop-portal-kde];
     services.pipewire.enable = mkDefault true;
+
+    # Enable screen reader by default
+    services.orca.enable = mkDefault true;
 
     services.displayManager = {
       sessionPackages = [kdePackages.plasma-workspace];

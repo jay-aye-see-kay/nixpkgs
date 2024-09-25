@@ -36,7 +36,7 @@
 
 buildPythonPackage rec {
   pname = "angr";
-  version = "9.2.115";
+  version = "9.2.118";
   pyproject = true;
 
   disabled = pythonOlder "3.11";
@@ -45,7 +45,7 @@ buildPythonPackage rec {
     owner = "angr";
     repo = "angr";
     rev = "refs/tags/v${version}";
-    hash = "sha256-9YMwVi4pQxdIMFfwVdQ8okc+n40qOnUDUYn8Rv3vmWU=";
+    hash = "sha256-vysSt1YAXjmzhhP6ZYwaxI7K8x844YBSSg9Wp2xH1pI=";
   };
 
   pythonRelaxDeps = [ "capstone" ];
@@ -88,7 +88,7 @@ buildPythonPackage rec {
     AngrDB = [ sqlalchemy ];
   };
 
-  setupPyBuildFlags = lib.optionals stdenv.isLinux [
+  setupPyBuildFlags = lib.optionals stdenv.hostPlatform.isLinux [
     "--plat-name"
     "linux"
   ];
